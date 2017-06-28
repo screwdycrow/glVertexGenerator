@@ -1,0 +1,112 @@
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+    <h2> Vertexes </h2>
+    <div class="row">
+
+        <div class="col-lg-12">
+            <form class="form-inline" id="form1" runat="server" v-model="">
+                <input type='file' id="imgInp" />
+               </span>Προηγούμενο κλικ: <span id="xybefore"> </span>
+            </form>
+                <img id="blah" src="#" alt="your image" />
+
+
+
+
+
+        <hr><hr>
+        </div>
+        <div class="col-lg-12 row">
+            <div class="col-lg-4">
+                <div class="card-block">
+                   <b>Eργαλείο: </b> <select  class="form-control w-50" id="settool">
+
+                    <option value="vertex"> Vertex </option>
+                    <option value="colorpicker"> RGB color picker </option>
+                </select>
+                    <b>Aναστροφή Ύψους:</b> <input type="checkbox" id="invertheight">
+                    <br>
+                    <small> Η opengl απο default μετράει το ύψος ανάποδα, εκτος και αν εχει ρυθμιστει αναλόγως. επιλέξτε αυτό αν ισχυεί αυτό</small>
+                    <br>
+
+                    <b> ofsset  x : <input type="number" class="form-control" id="offsetx" value="0"> </b>
+                    <b> ofsset  y : <input type="number" class="form-control" id="offsety" value="0"> </b>
+                    <small> πχ: αν x= 310 και έχει ενεργοποιηθεί το offset x τοτε x = 320. Μπορει να πάρει και αρνητικές τιμές.</small>
+                    <br>
+                    <b>Ενεργοποίηση Μεταβλητής x,y</b>  <input type="checkbox" id="varxy"><br>
+                    όνομα μεταβλήτής x : <input type="text" class="form-control" id="varx" value="X">
+                    όνομα μεταβλητής  y : <input type="text" class="form-control" id="vary" value="Y">
+                    <small >
+                        Σε περιπτωση που βρισκετε τα vertexes για κάποιο animation θα χρειαστειτε λογικά μια μεταβλήτη x και y ώστε να μετακινηθεί δυναμικά το polygon.
+                        Μπορείτε να τις ονομάσετε απο πάνω.
+                    </small>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4> κώδικας με glVertex2f</h4>
+                    </div>
+                    <div class="card-block">
+                        <code id="code">
+                        </code>
+                    </div>
+                </div>   <div class="card">
+                <div class="card-header">
+                    <h4> κώδικας με glVertex3f  </h4>
+                    <form class="form-inline">
+                        z-index ( glVertex3f ): <input type="number" class=" ml-3 form-control" id="zindex">
+                        <button class="btn btn-primary" id="setzindex"> Set </button>
+                    </form>
+
+                </div>
+                <div class="card-block">
+                    <code id="code3f">
+
+                    </code>
+                </div>
+                <button class="btn btn-danger" id="clear"> clear code </button>
+
+            </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4> RGB </h4>
+                    </div>
+                    <div class="card-block">
+                        <code id="codergb">
+                        </code>
+                    </div>
+                    <button class="btn btn-danger" id="clearrgb"> clear rgb </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+    </div>
+
+
+</div>
+
+
+<!-- jQuery first, then Tether, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+</body>
+</html>
